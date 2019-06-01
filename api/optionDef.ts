@@ -519,6 +519,15 @@
             mode      : "any",
             type      : "boolean"
         },
+        new_line_close: {
+            api: "any",
+            default: false,
+            definition: "Markup closing tags end will be rendered on their own line, if parent attributes are wrapped.",
+            label: "New Line before Closing Tag",
+            lexer: "markup",
+            mode: "beautify",
+            type: "boolean"
+        },
         no_case_indent   : {
             api       : "any",
             default   : false,

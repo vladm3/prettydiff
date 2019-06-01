@@ -555,11 +555,12 @@
                                 return 1;
                             }());
                     let aa:number = 0,
-                        len:number = lines.length - 1;
+                        len:number = lines.length - 1,
+                        regend:RegExp = (/(\/|\?)?>$/);
                     data.lines[a + 1] = 0;
                     do {
                         build.push(lines[aa]);
-                        build.push(nl(lev));
+                        build.push(nl(regend.test(lines[aa + 1]) ? lev - 2 : lev));
                         aa = aa + 1;
                     } while (aa < len);
                     data.lines[a + 1] = line;
@@ -599,6 +600,9 @@
                     } while (y < c);
                     if (data.types[y - 1] === "comment_attribute") {
                         space = nl(levels[y - 2] - 1);
+                    }
+                    if (options.new_line_close && levels[y - 2] > -1) {
+                        space = lf;
                     }
                     data.token[y - 1] = data.token[y - 1] + space + end[0];
                 };
