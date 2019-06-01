@@ -585,6 +585,17 @@ lexer      | any
 mode       | any
 type       | boolean
 
+## new_line_close
+property | value
+-----------|---
+api        | any
+default    | false
+definition | Markup closing tags end will be rendered on their own line, if parent attributes are wrapped.
+label      | New Line before Closing Tag
+lexer      | markup
+mode       | beautify
+type       | boolean
+
 ## no_case_indent
 property | value
 -----------|---
@@ -607,7 +618,7 @@ lexer      | style
 mode       | any
 type       | boolean
 
-## no_semi
+## no_semicolon
 property | value
 -----------|---
 api        | any
